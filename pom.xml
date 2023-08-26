@@ -3,7 +3,10 @@
 	<groupId>coding_practice</groupId>
 	<artifactId>coding_practice</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-
+	<packaging>jar</packaging>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
@@ -11,9 +14,7 @@
 			<version>5.10.0</version>
 			<scope>test</scope>
 		</dependency>
-
 	</dependencies>
-
 	<build>
 		<sourceDirectory>src/main</sourceDirectory>
 		<testSourceDirectory>src/test</testSourceDirectory>
