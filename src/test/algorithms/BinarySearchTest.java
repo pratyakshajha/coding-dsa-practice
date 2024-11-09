@@ -119,7 +119,7 @@ public class BinarySearchTest {
 
 		long maxDuration = 1;
 		long startTime = System.currentTimeMillis();
-		int result = BinarySearch.binarySearchRecursive(item, arr, 0, arr.length);
+		int result = BinarySearch.binarySearchRecursive(item, arr, 0, arr.length - 1);
 		long duration = System.currentTimeMillis() - startTime;
 
 		assertEquals(randomIdx, result);
@@ -128,13 +128,13 @@ public class BinarySearchTest {
 
 	@Test
 	public void testRecursiveSearchNotFoundLargeArray() {
-		int size = 1000;
+		int size = 10000;
 		int[] arr = new Random().ints(size, 0, 10000).distinct().sorted().toArray();
 		int item = 20000;
 
 		long maxDuration = 1;
 		long startTime = System.currentTimeMillis();
-		int result = BinarySearch.binarySearchRecursive(item, arr, 0, arr.length);
+		int result = BinarySearch.binarySearchRecursive(item, arr, 0, arr.length - 1);
 		long duration = System.currentTimeMillis() - startTime;
 
 		assertEquals(-1, result);
