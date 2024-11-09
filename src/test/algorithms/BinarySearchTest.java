@@ -112,8 +112,8 @@ public class BinarySearchTest {
 
 	@Test
 	public void testRecursiveSearchFoundLargeArray() {
-		int size = 1000;
-		int[] arr = new Random().ints(size, 0, 10000).distinct().sorted().toArray();
+		int size = 10000;
+		int[] arr = new Random().ints(size, 0, size - 1).distinct().sorted().toArray();
 		int randomIdx = new Random().nextInt(size - 1);
 		int item = arr[randomIdx];
 
@@ -129,7 +129,7 @@ public class BinarySearchTest {
 	@Test
 	public void testRecursiveSearchNotFoundLargeArray() {
 		int size = 10000;
-		int[] arr = new Random().ints(size, 0, 10000).distinct().sorted().toArray();
+		int[] arr = new Random().ints(size, 0, size - 1).distinct().sorted().toArray();
 		int item = 20000;
 
 		long maxDuration = 1;
