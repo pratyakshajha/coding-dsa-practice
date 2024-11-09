@@ -2,9 +2,9 @@ package datastructures.graph;
 
 import java.util.Objects;
 
-public class Vertex {
-	String label;
-	public Vertex (String label) {
+public class Vertex<T>{
+	public T label;
+	public Vertex (T label) {
 		this.label = label;
 	}
 	@Override

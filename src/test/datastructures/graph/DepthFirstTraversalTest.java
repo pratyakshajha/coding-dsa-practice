@@ -1,16 +1,15 @@
 package datastructures.graph;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 import org.junit.jupiter.api.Test;
 
-import datastructures.problems.graph.DepthFirstSearch;
+import datastructures.problems.graph.DepthFirstTraversal;
 @SuppressWarnings("rawtypes")
 
-public class DepthFirstSearchTest {
+public class DepthFirstTraversalTest {
 	
 	
 	@Test
@@ -35,10 +34,9 @@ public class DepthFirstSearchTest {
 		graph.addEdge("C", "E");
 		System.out.println(graph.adjacencyList);
 		Map <Vertex, Boolean> visited = populateVisited(graph);
-		DepthFirstSearch dfs = new DepthFirstSearch();
+		DepthFirstTraversal dfs = new DepthFirstTraversal();
 		Vertex<String> a = new Vertex<>("A");
-		Vertex <String> c = new Vertex<>("C");
-		dfs.depthFirstSearch(a, graph ,visited, c);
+		dfs.depthFirstTraversal(a, graph ,visited);
 	}
 	public static Map<Vertex, Boolean> populateVisited(Graph graph) {
 		Set<Vertex> vertices = graph.adjacencyList.keySet();

@@ -1,16 +1,15 @@
 package datastructures.graph;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 import org.junit.jupiter.api.Test;
 
-import datastructures.problems.graph.DepthFirstSearch;
-@SuppressWarnings("rawtypes")
+import datastructures.problems.graph.BreadthFirstSearch;
 
-public class DepthFirstSearchTest {
+@SuppressWarnings("rawtypes")
+public class BreadthFirstSearchTest {
 	
 	
 	@Test
@@ -19,8 +18,10 @@ public class DepthFirstSearchTest {
 		 *  		A
 		 *    	 /  |  \
 		 *      B - C   D
+		 *      	|	|
+		 *      	E - F
 		 *      	|
-		 *      	E
+		 *      	G
 		 */
 		Graph graph = new Graph();
 		graph.addVertex("A");
@@ -28,18 +29,24 @@ public class DepthFirstSearchTest {
 		graph.addVertex("C");
 		graph.addVertex("D");
 		graph.addVertex("E");
+		graph.addVertex("F");
+		graph.addVertex("G");
 		graph.addEdge("A", "B");
 		graph.addEdge("A", "C");
 		graph.addEdge("A", "D");
 		graph.addEdge("B", "C");
 		graph.addEdge("C", "E");
+		graph.addEdge("E", "G");
+		graph.addEdge("D", "F");
+		graph.addEdge("F", "E");
 		System.out.println(graph.adjacencyList);
 		Map <Vertex, Boolean> visited = populateVisited(graph);
-		DepthFirstSearch dfs = new DepthFirstSearch();
+		BreadthFirstSearch bfs = new BreadthFirstSearch();
 		Vertex<String> a = new Vertex<>("A");
-		Vertex <String> c = new Vertex<>("C");
-		dfs.depthFirstSearch(a, graph ,visited, c);
+		Vertex <String> d = new Vertex<>("D");
+		bfs.breadthFirstSearch(a, graph ,visited, d);
 	}
+	
 	public static Map<Vertex, Boolean> populateVisited(Graph graph) {
 		Set<Vertex> vertices = graph.adjacencyList.keySet();
 		Map<Vertex, Boolean> visited = new HashMap<>();
