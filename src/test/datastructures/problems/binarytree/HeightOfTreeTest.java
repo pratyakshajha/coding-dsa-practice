@@ -5,7 +5,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
 import datastructures.tree.BinaryTree;
-import datastructures.tree.TreeNode;
 
 public class HeightOfTreeTest {
 
