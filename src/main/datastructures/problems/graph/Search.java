@@ -38,6 +38,7 @@ public class Search {
 	public static <T> boolean breadthFirst(Graph<T> graph, Vertex<T> key) {
 		List<T> visited = new ArrayList<>();
 		Queue<Vertex<T>> toVisit = new LinkedList<>();
+	
 
 		toVisit.add(graph.root);
 		visited.add(graph.root.label);
