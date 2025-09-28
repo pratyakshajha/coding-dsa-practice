@@ -41,7 +41,7 @@ public class BinaryTree {
 //		bin.zigZagOrder(bin.root);
 //		System.out.println(bin.isPerfectlyBalanced(bin.root));
 //		System.out.println(bin.isBalanced(bin.root));
-		bin.boundaryTraversal(bin.root);
+//		bin.boundaryTraversal(bin.root);
 	}
 	
 	// 9 5 3 7 16 18
@@ -110,7 +110,7 @@ public class BinaryTree {
 		if (p == root) {
 			return true;
 		}
-		return exists(root.left, p) ||exists(root.right, p);
+		return exists(root.left, p) || exists(root.right, p);
 	}
 	
 	public TreeNode LCA(TreeNode root, TreeNode p, TreeNode q) {
@@ -122,6 +122,7 @@ public class BinaryTree {
 		}
 		return Helper(root, p, q);
 	}
+	
 	public TreeNode Helper(TreeNode root, TreeNode p, TreeNode q) {
 		TreeNode child = new TreeNode(root.data);
 		boolean a = exists(root.left, p);
@@ -280,6 +281,7 @@ public class BinaryTree {
 		if (node.left == null && node.right == null) return true;
 		else return false;
 	}
+	
 }
 
 class Node {
