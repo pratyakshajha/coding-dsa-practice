@@ -19,43 +19,39 @@ public class Graph<T> {
 		this.root = root;
 	}
 	
-	public Graph(int[][] adjacencyMatrix) {
-		this.adjacencyMatrix = adjacencyMatrix;
-	}
-	
-	public void addVertex(String label) {
-		Vertex v = new Vertex<>(label);
+	public void addVertex(T label) {
+		Vertex<T> v = new Vertex<>(label);
 		if (adjacencyList.get(v) == null) {
 			adjacencyList.put(v, new ArrayList<>());
 		}
 	}
 	
-	public void removeVertex(String label) {
-		Vertex v = new Vertex<>(label);
+	public void removeVertex(T label) {
+		Vertex<T> v = new Vertex<>(label);
 		if (adjacencyList.get(v) != null) {
 			adjacencyList.remove(v);
 		}
 	}
 	
-	public void addEdge(String label1, String label2) {
-		Vertex v1 = new Vertex<>(label1);
-		Vertex v2 = new Vertex<>(label2);
+	public void addEdge(T label1, T label2) {
+		Vertex<T> v1 = new Vertex<>(label1);
+		Vertex<T> v2 = new Vertex<>(label2);
 		if (adjacencyList.get(v1) != null)
 			adjacencyList.get(v1).add(v2);
 		if (adjacencyList.get(v2) != null)
 			adjacencyList.get(v2).add(v1);
 	}
 	
-	public void removeEdge(String label1, String label2) {
-		Vertex v1 = new Vertex<>(label1);
-		Vertex v2 = new Vertex<>(label2);
+	public void removeEdge(T label1, T label2) {
+		Vertex<T> v1 = new Vertex<>(label1);
+		Vertex<T> v2 = new Vertex<>(label2);
 		if (adjacencyList.get(v1) != null)
 			adjacencyList.get(v1).remove(v2);
 		if (adjacencyList.get(v2) != null)
 			adjacencyList.get(v2).remove(v1);
 	}
 	
-	public List<Vertex> adjVertice (String label) {
+	public List<Vertex<T>> adjVertice (T label) {
 		return adjacencyList.get(new Vertex<>(label));
 	}
 }

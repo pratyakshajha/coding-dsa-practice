@@ -9,27 +9,24 @@ import java.util.Queue;
 import datastructures.graph.Graph;
 import datastructures.graph.Vertex;
 
-@SuppressWarnings("rawtypes")
-
-public class BreadthFirstSearch {
-	public void breadthFirstSearch(Vertex s, Graph graph, Map<Vertex , Boolean> visited, Vertex key) {
-		Queue<Vertex> queue = new LinkedList<>();
-		List<Vertex> lst = new ArrayList<>();
+public class BreadthFirstSearch<T> {
+	public void breadthFirstSearch(Vertex<T> s, Graph<T> graph, Map<Vertex<T> , Boolean> visited, Vertex<T> key) {
+		Queue<Vertex<T>> queue = new LinkedList<>();
+		List<Vertex<T>> lst = new ArrayList<>();
 		queue.add(s);
 		while (!queue.isEmpty()) {
-			Vertex v = queue.remove();
+			Vertex<T> v = queue.remove();
 			if (!visited.get(v)) {
 				visited.put(v,  true);
 				lst.add(v);
 			}
-			for (Vertex r: graph.adjacencyList.get(v)) {
+			for (Vertex<T> r: graph.adjacencyList.get(v)) {
 				if (!visited.get(r)) {
 					queue.add(r);
 				}
 			}
 		}
-		for (Vertex temp : lst) {
-			System.out.println(temp.label);
+		for (Vertex<T> temp : lst) {
 			if (temp.label == key.label) {
 				break;
 			}

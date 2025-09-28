@@ -7,7 +7,6 @@ import java.util.Set;
 import org.junit.jupiter.api.Test;
 
 import datastructures.problems.graph.DepthFirstTraversal;
-@SuppressWarnings("rawtypes")
 
 public class DepthFirstTraversalTest {
 	

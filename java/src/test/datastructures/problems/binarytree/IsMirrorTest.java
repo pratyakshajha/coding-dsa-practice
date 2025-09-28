@@ -39,13 +39,13 @@ public class IsMirrorTest {
 		mirrorTree.root.left.left = new TreeNode(6);
 		
 		IsMirror im = new IsMirror();
-		assertTrue(im.isMirror(tree.root, mirrorTree.root));
+		assertFalse(im.isMirror(tree.root, mirrorTree.root));
 	}
 	@Test
 	public void testSimpleTreeNull() {
 		BinaryTree tree = BinaryTreeUtility.getSimpleTree();
 		
 		IsMirror im = new IsMirror();
-		assertTrue(im.isMirror(tree.root, null));
+		assertFalse(im.isMirror(tree.root, null));
 	}
 }

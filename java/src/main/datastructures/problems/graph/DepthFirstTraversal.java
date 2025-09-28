@@ -6,18 +6,16 @@ import java.util.Map;
 import datastructures.graph.Graph;
 import datastructures.graph.Vertex;
 
-@SuppressWarnings("rawtypes") 
-
-public class DepthFirstTraversal {
-public void depthFirstTraversal(Vertex s, Graph graph, Map<Vertex , Boolean> visited) {
+public class DepthFirstTraversal<T> {
+public void depthFirstTraversal(Vertex<T> s, Graph<T> graph, Map<Vertex<T>, Boolean> visited) {
 		
 		if (s == null) return;
 		if (!visited.get(s)) {
 			// visit
 			System.out.println(s.label);
 			visited.put(s, true);
-			List<Vertex> adjacents = graph.adjacencyList.get(s);
-			for (Vertex v : adjacents) {
+			List<Vertex<T>> adjacents = graph.adjacencyList.get(s);
+			for (Vertex<T> v : adjacents) {
 				if (!visited.get(v))
 				depthFirstTraversal(v, graph, visited);
 			}

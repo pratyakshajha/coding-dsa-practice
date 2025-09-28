@@ -16,7 +16,7 @@ public class PathTest {
 	public void testSimpleFindPath() {
 		Graph<String> graph = GraphUtility.getSimpleGraph();
 		Vertex<String> vA = graph.root;
-		Vertex<String> vB = vA.adjacencyList.getFirst();
+		Vertex<String> vB = vA.adjacencyList.get(0);
 		Vertex<String> vC = vA.adjacencyList.get(1);
 		Vertex<String> vD = vA.adjacencyList.get(2);
 		Vertex<String> vE = vC.adjacencyList.get(2);
@@ -32,7 +32,7 @@ public class PathTest {
 	public void testSimpleBfsPath() {
 		Graph<String> graph = GraphUtility.getSimpleGraph();
 		Vertex<String> vA = graph.root;
-		Vertex<String> vB = vA.adjacencyList.getFirst();
+		Vertex<String> vB = vA.adjacencyList.get(0);
 		Vertex<String> vC = vA.adjacencyList.get(1);
 		Vertex<String> vD = vA.adjacencyList.get(2);
 		Vertex<String> vE = vC.adjacencyList.get(2);

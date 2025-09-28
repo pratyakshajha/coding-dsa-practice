@@ -6,10 +6,9 @@ import java.util.Set;
 
 import org.junit.jupiter.api.Test;
 
-import datastructures.problems.graph.BreadthFirstTraversal;
+import datastructures.problems.graph.BreadthFirstSearch;
 
-@SuppressWarnings("rawtypes")
-public class BreadthFirstTraversalTest {
+public class BreadthFirstSearchTest {
 	
 	
 	@Test
@@ -41,9 +40,10 @@ public class BreadthFirstTraversalTest {
 		graph.addEdge("F", "E");
 		System.out.println(graph.adjacencyList);
 		Map <Vertex, Boolean> visited = populateVisited(graph);
-		BreadthFirstTraversal bfs = new BreadthFirstTraversal();
+		BreadthFirstSearch bfs = new BreadthFirstSearch();
 		Vertex<String> a = new Vertex<>("A");
-		bfs.breadthFirstTraversal(a, graph ,visited);
+		Vertex <String> d = new Vertex<>("D");
+		bfs.breadthFirstSearch(a, graph ,visited, d);
 	}
 	
 	public static Map<Vertex, Boolean> populateVisited(Graph graph) {

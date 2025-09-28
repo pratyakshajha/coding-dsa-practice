@@ -6,28 +6,27 @@ import java.util.Map;
 
 import datastructures.graph.Graph;
 import datastructures.graph.Vertex;
-@SuppressWarnings("rawtypes")
 
-public class DepthFirstSearch {
-	public void helper(Vertex s, Graph graph, Map<Vertex , Boolean> visited, List<Vertex> lst) {
+public class DepthFirstSearch<T> {
+	public void helper(Vertex<T> s, Graph<T> graph, Map<Vertex<T> , Boolean> visited, List<Vertex<T>> lst) {
 		
 		if (s == null) return;
 		if (!visited.get(s)) {
 			// visit
 			lst.add(s);
 			visited.put(s, true);
-			List<Vertex> adjacents = graph.adjacencyList.get(s);
-			for (Vertex v : adjacents) {
+			List<Vertex<T>> adjacents = graph.adjacencyList.get(s);
+			for (Vertex<T> v : adjacents) {
 				if (!visited.get(v))
 				helper(v, graph, visited, lst);
 			}
 		}
 	}
 	
-	public void depthFirstSearch(Vertex s, Graph graph, Map<Vertex , Boolean> visited, Vertex key) {
-		List<Vertex> lst = new ArrayList<>();
+	public void depthFirstSearch(Vertex<T> s, Graph<T> graph, Map<Vertex<T>, Boolean> visited, Vertex<T> key) {
+		List<Vertex<T>> lst = new ArrayList<>();
 		helper (s, graph, visited, lst);
-		for (Vertex temp : lst) {
+		for (Vertex<T> temp : lst) {
 			System.out.println(temp.label);
 			if (temp.label == key.label) {
 				break;

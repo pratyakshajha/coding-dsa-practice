@@ -7,19 +7,17 @@ import java.util.Queue;
 import datastructures.graph.Graph;
 import datastructures.graph.Vertex;
 
-@SuppressWarnings("rawtypes")
-
-public class BreadthFirstTraversal {
-	public void breadthFirstTraversal(Vertex s, Graph graph, Map<Vertex , Boolean> visited) {
-		Queue<Vertex> queue = new LinkedList<>();
+public class BreadthFirstTraversal<T> {
+	public void breadthFirstTraversal(Vertex<T> s, Graph<T> graph, Map<Vertex<T> , Boolean> visited) {
+		Queue<Vertex<T>> queue = new LinkedList<>();
 		queue.add(s);
 		while (!queue.isEmpty()) {
-			Vertex v = queue.remove();
+			Vertex<T> v = queue.remove();
 			if (!visited.get(v)) {
 				visited.put(v,  true);
 				System.out.println(v.label);
 			}
-			for (Vertex r: graph.adjacencyList.get(v)) {
+			for (Vertex<T> r: graph.adjacencyList.get(v)) {
 				if (!visited.get(r)) {
 					queue.add(r);
 				}
